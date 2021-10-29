@@ -1,0 +1,405 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Fan C Menu",
+        "version": "1.0.0"
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "basePath": "/api/v1",
+    "paths": {
+        "/appetizers": {
+            "get": {
+                "summary": "Get all appetizers",
+                "description": "Retrieves the list of appetizers",
+                "responses": {
+                    "200": {
+                        "description": "The list of appetizers",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Appetizer"
+                            }
+                        }
+                    }
+                }
+            },
+        
+        "post": {
+          "summary": "Create an appetizer",
+          "parameters": [
+            {
+              "name": "appetizer",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/NewAppetizer"
+              }
+            }
+          ],
+          "description": "Creates an appetizer",
+          "consumes": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "The newly created Appetizer",
+              "schema": {
+                "$ref": "#/definitions/NewAppetizer"
+              }
+            }
+          }
+        }
+      },
+      
+    
+      "/appetizers/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "summary": "Get a single appetizer",
+                "description": "Get appetizer by id",
+                "responses": {
+                    "200": {
+                        "description": "Single Appetizer",
+                        "schema": {
+                            "$ref": "#/definitions/Appetizer"
+                        }
+                    }
+                }
+            }
+        },
+        "/mains": {
+            "get": {
+              "summary": "Get all mains",
+              "description": "Retrieves list of mains",
+              "responses": {
+                "200": {
+                  "description": "The list of mains",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Main"
+                    }
+                  }
+                }
+              }
+            },
+          
+          "post": {
+            "summary": "Create a main",
+            "parameters": [
+              {
+                "name": "main",
+                "in": "body",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/NewMain"
+                }
+              }
+            ],
+            "description": "Creates a main",
+            "consumes": [
+              "application/json"
+            ],
+            "responses": {
+              "201": {
+                "description": "The newly created Main",
+                "schema": {
+                  "$ref": "#/definitions/NewMain"
+                }
+              }
+            }
+          }
+        },
+          "/mains/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "summary": "Get a single main",
+                "description": "Get main by id",
+                "responses": {
+                    "200": {
+                        "description": "Single Main",
+                        "schema": {
+                            "$ref": "#/definitions/Main"
+                        }
+                    }
+                }
+            }
+        },
+        "/desserts": {
+            "get": {
+              "summary": "Get all desserts",
+              "description": "Retrieves list of desserts",
+              "responses": {
+                "200": {
+                  "description": "The list of desserts",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Dessert"
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "summary": "Add a dessert",
+              "parameters": [
+                {
+                  "name": "dessert",
+                  "in": "body",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/NewDessert"
+                  }
+                }
+              ],
+              "description": "Create a dessert",
+              "consumes": [
+                "application/json"
+              ],
+              "responses": {
+                "201": {
+                  "description": "The newly added dessert",
+                  "schema": {
+                    "$ref": "#/definitions/NewDessert"
+                  }
+                }
+              }
+            }
+          },
+          "/desserts/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "summary": "Get a single dessert",
+                "description": "Get dessert by id",
+                "responses": {
+                    "200": {
+                        "description": "Single Dessert",
+                        "schema": {
+                            "$ref": "#/definitions/Dessert"
+                        }
+                    }
+                }
+            }
+        },
+        "/drinks": {
+            "get": {
+              "summary": "Get all drinks",
+              "description": "Retrieves list of drinks",
+              "responses": {
+                "200": {
+                  "description": "The list of drinks",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/Drink"
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "summary": "Add a drink",
+              "parameters": [
+                {
+                  "name": "drink",
+                  "in": "body",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/NewDrink"
+                  }
+                }
+              ],
+              "description": "Creates a drink",
+              "consumes": [
+                "application/json"
+              ],
+              "responses": {
+                "201": {
+                  "description": "The newly added drink",
+                  "schema": {
+                    "$ref": "#/definitions/NewDrink"
+                  }
+                }
+              }
+            }
+          },
+          "/drinks/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "summary": "Get a single drink",
+                "description": "Get drink by id",
+                "responses": {
+                    "200": {
+                        "description": "Single Drink",
+                        "schema": {
+                            "$ref": "#/definitions/Drink"
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "definitions": {
+        "Appetizer": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                  "type": "string"
+              },
+              "likes": {
+                  "type": "integer"
+              },
+              "dislikes": {
+                  "type": "integer"
+              }
+            }
+        },
+        "NewAppetizer": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            }
+
+          }
+        },
+        "Main": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "likes": {
+                "type": "integer"
+              },
+              "dislikes": {
+                "type": "integer"
+              }
+            }
+        },
+        "NewMain": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            }
+
+          }
+        },
+        "Dessert": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "likes": {
+                "type": "integer"
+              },
+              "dislikes": {
+                "type": "integer"
+              }
+            }
+        },
+        "NewDessert": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            }
+
+          }
+        },
+        "NewDrink": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "price": {
+              "type": "string"
+            }
+
+          }
+        },
+        "Drink": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "likes": {
+                "type": "integer"
+              },
+              "dislikes": {
+                "type": "integer"
+              }
+            }
+        }
+    }
+}
