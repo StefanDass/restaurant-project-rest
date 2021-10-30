@@ -107,6 +107,10 @@ app.post("/api/v1/drinks", (req, res) => {
     res.status(201).json(drink);
 });
 
+// THE RECOMMENDATIONS
+app.get("/api/v1/recommendations", (req, res) => res.json(data.recommendations));
+
+
 app.use("/api/v1/menu", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(PORT, () =>
