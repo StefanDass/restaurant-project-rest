@@ -269,6 +269,23 @@
                     }
                 }
             }
+        },
+        "/recommendations": {
+          "get": {
+            "summary": "Get all recommendations",
+            "description": "Retrieves list of recommendations",
+            "responses": {
+              "200": {
+                "description": "The list of recommendations",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Recommendation"
+                  }
+                }
+              }
+            }
+          }
         }
     },
 
@@ -400,6 +417,26 @@
                 "type": "integer"
               }
             }
-        }
+        },
+        "Recommendation": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "price": {
+                "type": "string"
+            },
+            "likes": {
+                "type": "integer"
+            },
+            "dislikes": {
+                "type": "integer"
+            }
+          }
+      }
     }
 }
