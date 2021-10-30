@@ -427,15 +427,6 @@
             "name": {
               "type": "string"
             },
-            "price": {
-                "type": "string"
-            },
-            "likes": {
-                "type": "integer"
-            },
-            "dislikes": {
-                "type": "integer"
-            }
           }
       }
     }

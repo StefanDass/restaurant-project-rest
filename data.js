@@ -195,15 +195,6 @@ const data = {
         {
             id: 1,
             name: 'Coca-cola',
-            price: '$18',
-            likes: 7,
-            dislikes: 3,
-            ingredients: {
-                1: "Coca-cola syrup",
-                2: "sugar",
-                3: "carbon dioxide",
-                4: "water",
-            },
         },
         
     ]
