@@ -194,7 +194,7 @@ const data = {
     recommendations: [
         {
             id: 1,
-            name: 'Coca-cola',
+            name: 'Spaghetti and Meatballs',
         },
         
     ]
